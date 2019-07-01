@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>注册</title>
+        <link rel="stylesheet" href="../css/login.css">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+        
+    </head>
+    <body>
+            
+        <div class="container">
+            <div class="login_body l_clear">
+                <div class="login_form l_float">
+                    <div class="login_top">
+                        <img src="../img/logo_z.svg" alt="" class=""></img>
+                        <span style="font-size: 30px;font-weight: 500;color: #703eff;">注册</span>
+                        
+                    </div>
+                    <div class="login_con">
+                        <form  method="get" id ="login_form">
+                            <div>
+                                <label for="user_name">用户名</label>
+                                <input type="text" id="username" name="username"  placeholder="用户名">
+                               
+                                <img src="../img/icons/user.svg">
+                                <p class="tips hidden">请检查您的账号</p>
+                            </div>
+                            <div>
+                                <label for="user_pwd">密码</label>
+                                <input type="password" name="password" id="password"  placeholder="请输入账户密码">
+                                <img src="../img/icons/lock.svg">
+                                <p class="tips hidden">请检查您的密码</p>
+                            </div>
+							
+                            <div class="radio" id="group">
+                                    <span><input type="radio" id="group_1", name="group", value="student" checked="checked" >学生</span>
+                                    <span><input type="radio" id="group_2", name="group", value="teacher">老师</span><br>
+                                  </div>
+				
+                            <br>
+                            
+							
+                        </form>   
+                            <div class="b_clear submit">
+                                    <!-- type="submit" -->
+                                <button id="register"  style="background-color: #703EFF;width: 120px;height: 40px;border-radius: 50px;border-bottom: none;cursor: pointer;font-size: 16px;    color: #fff;text-align: center;font-weight: bold;background-color: #5E2FE7;">注&nbsp;&nbsp;册</button>
+								<a href="login.html" class="r_float">返回登陆</a>
+                               
+                            </div>
+                        </form>   
+                      
+                    </div>
+                   
+                   
+                    
+                </div>
+                <div class="login_ad l_float" id="AdImg">
+                    
+                </div>
+            </div>
+            <div class="footer">
+                        <p>Copyright © 2019  <a href="#">神奇之旅</a></p>
+                        
+                    </div>
+        </div>
+
+        <script type="text/javascript">
+         
+            
+            $("#register").on("click",function()
+        {
+
+            
+            
+          var username = $("#username").val();
+          var password = $("#password").val();
+          var group = $('#group input[name="group"]:checked ').val();
+          console.log($("group"));
+          var data = {};
+          data.username = username;
+          data.password = password;
+          data.group = group;
+  
+
+          var url = "../php/register.php";
+  
+          console.log("data",data);
+          $.ajax({
+            type: 'post',
+            dataType: "json",
+            data: JSON.stringify(data),
+            url: url,
+            contentType : "application/text",
+            success: function (data) {
+              if (data.code == 200) {
+                 alert("注册成功");
+                  window.location.href="../html/login.html";
+              
+              } else if(data.code == 1){
+                  alert("用户存在");
+               
+              }
+              
+  
+            },
+            error: function (data) {
+            //     if (data.code == 200) {
+                
+            //     window.location.href="../php/login.php";
+            
+            // } else if(data.code == 1){
+            //     alert("用户存在");
+             
+            // }
+            }
+          });
+        });
+        
+        
+        </script>        
+    </body>
+</html>

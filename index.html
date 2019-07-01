@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>登录</title>
+        <link rel="stylesheet" href="css/login.css">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+        
+    </head>
+    <body>
+            
+        <div class="container">
+            <div class="login_body l_clear">
+                <div class="login_form l_float">
+                    <div class="login_top">
+                        <img src="img/logo_z.svg" alt="" class="">
+                        <span style="font-size: 30px;font-weight: 500;color: #703eff;">登录</span>
+                    </div>
+                    <div class="login_con">
+                        <form  method="get" id ="login_form">
+                            <div>
+                                <label for="user_name">用户名</label>
+                                <input type="text" id="username" name="username"  placeholder="用户名">
+                               
+                                <img src="img/icons/user.svg">
+                                <p class="tips hidden">请检查您的账号</p>
+                            </div>
+                            <div>
+                                <label for="user_pwd">密码</label>
+                                <input type="password" name="password" id="password"  placeholder="请输入账户密码">
+                                <img src="img/icons/lock.svg">
+                                <p class="tips hidden">请检查您的密码</p>
+                            </div>
+							
+                            <div class="radio" id="group">
+                                    <span><input type="radio" id="group_1", name="group", value="student" checked="checked" >学生</span>
+                                    <span><input type="radio" id="group_2", name="group", value="teacher">老师</span><br>
+                                  </div>
+				
+                            <br>
+                            
+							
+                        </form>   
+                            <div class="b_clear submit">
+                                    <!-- type="submit" -->
+                                <button id="login"  style="background-color: #703EFF;width: 120px;height: 40px;border-radius: 50px;border-bottom: none;cursor: pointer;font-size: 16px;    color: #fff;text-align: center;font-weight: bold;background-color: #5E2FE7;">登&nbsp;&nbsp;录</button>
+								<button id="re"  style="background-color: #703EFF;width: 120px;height: 40px;border-radius: 50px;border-bottom: none;cursor: pointer;font-size: 16px;    color: #fff;text-align: center;font-weight: bold;background-color: #5E2FE7;">去&nbsp;注&nbsp;册</button>
+                                <a href="misspsw.html" class="r_float">忘记密码？</a>
+                                <p class="tips hidden">登录失败，请检查您的账户与密码</p>
+                            </div>
+                        </form>   
+                      
+                    </div>
+                   
+                   
+                    
+                </div>
+                <div class="login_ad l_float" id="AdImg">
+                    
+                </div>
+            </div>
+            <div class="footer">
+                        <p>Copyright © 2019  <a href="#">神奇之旅</a></p>
+                        
+                    </div>
+        </div>
+
+        <script type="text/javascript">
+          
+            // 用户输入错误提示
+            
+            var inputs = document.getElementsByTagName('input');
+            var tips = document.getElementsByClassName('tips');
+            
+            function InputNull(a){
+                tips[a].classList.add('show');
+                tips[a].classList.remove('hidden');
+            }
+            function InputNoNull(a){
+                tips[a].classList.add('hidden');
+                tips[a].classList.remove('show');
+            }
+            
+            var UserName     = inputs[0];
+            var UserPwd      = inputs[1];
+            var AuthCode     = inputs[2];
+            var UserNameTips = tips[0];
+            var UserPwdTips  = tips[1];
+            var AuthCodeTips = tips[2];
+            
+            UserName.oninput = function () {
+                if (UserName.value == '') {
+                    InputNull(0);
+                    UserNameTips.innerHTML="请检查用户名，用户名不能为空";
+                } else{
+                    InputNoNull(0);
+                }
+            }
+            UserName.onblur = function () {
+                if (UserName.value == '') {
+                    InputNull(0);
+                    UserNameTips.innerHTML="请检查用户名，用户名不能为空";
+            
+                } 
+            }
+            
+            UserPwd.oninput = function () {
+                if (UserPwd.value == '') {
+                    InputNull(1);
+                    UserPwdTips.innerHTML="请检查您的密码，密码不能为空";
+                } else{
+                    InputNoNull(1);
+                }
+            }
+            UserPwd.onblur = function () {
+                if (UserPwd.value == '') {
+                    InputNull(1);
+                    UserPwdTips.innerHTML="请检查您的密码，密码不能为空";
+                } 
+            }
+            
+            console.log($("#radiotr"));
+       
+            
+            $("#login").on("click",function()
+        {
+
+            
+            
+          var username = $("#username").val();
+          var password = $("#password").val();
+          var group = $('#group input[name="group"]:checked ').val();
+          console.log($("group"));
+          var data = {};
+          data.username = username;
+          data.password = password;
+          data.group = group;
+  
+
+          var url = "php/login.php";
+  
+          console.log("data",data);
+          $.ajax({
+            type: 'post',
+            dataType: "json",
+            data: JSON.stringify(data),
+            url: url,
+            contentType : "application/text",
+            success: function (data) {
+              if (data.code == 200) {
+                if(group == "student")
+                  window.location.href="test/main.html.php?sid="+username;
+                if(group == "teacher")
+                  window.location.href="tea_test/main.html.php?id="+username;
+              
+              } else if(data.code == 201){
+                  alert("已邀请进入课程");
+                if(group == "student")
+                  window.location.href="test/main.html.php";
+                if(group == "teacher")
+                  window.location.href="tea_test/main.html.php";
+              }else if(data.code == 100){
+                show_confirm();
+                  function show_confirm()
+                    {
+                    var r=confirm("未加入教程，是否发起申请");
+                    if (r==true)
+                    {
+                        //修改teacher
+                    }
+                        else
+                        {
+                       
+                        }
+                    }
+
+              }else if(data.code == 1){
+                  alert("用户名密码不正确");
+                $("#loginResult").text("用户名密码不正确");
+                $("#loginResult").css("color", "#FF0000");
+              }
+              else{
+                alert("不存在该用户");
+                $("#loginResult").text("不存在该用户");
+                $("#loginResult").css("color", "#FF0000");
+              }
+  
+            },
+            error: function (data) {
+              alert("此课程你没有权限");
+            }
+          });
+        });
+        
+		
+		
+		   $("#re").on("click",function()
+        {
+		window.location.href="http://127.0.0.1/scholat/html/register.html"; 
+		});
+       
+        </script>        
+    </body>
+</html>

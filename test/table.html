@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta charset="utf-8">
+  <title>table模块快速使用</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="//layui.hcwl520.com.cn/layui/css/layui.css?v=201801090202" />
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+          
+            $("#inputf").trigger("click");
+            
+            alert("1ok");
+
+        });
+         $("#btn2").click(function(){
+          
+            
+            $("#inputs").trigger("click");
+            alert("2ok");
+
+        });
+         $("#btn3").click(function(){
+          
+            
+            console.log($("#uploadform")[0]);
+            alert("3ok");
+
+             $.ajax({
+            //几个参数需要注意一下
+                url: "upload_file.php",
+                type: "POST",//方法类型
+                cache: false,
+                data: new FormData($("#uploadform")[0]),
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    console.log(result);//打印服务端返回的数据(调试用)
+                   
+                        alert("SUCCESS");
+                    
+                    
+                },
+                error : function() {
+                    alert("异常！");
+                }
+            });
+
+        });
+
+
+       
+
+
+          });
+    </script>
+  </head>
+  <body>
+
+<!-- form id="uploadform" action="upload_file.php" method="post" -->
+<form id="uploadform" enctype="multipart/form-data">
+<input id = "inputf"type="file" name="file" id="file" /> 
+<br />
+<input id = "inputs"type="submit" name="submit" value="Submit" />
+</form>
+<button id="btn1">选择按钮</button>
+<button id="btn2">发送按钮</button>
+<button id="btn3">测试按钮</button>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>demo</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+small{font-size:12px;}
+ul,ol{list-style:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+fieldset,img{border:0;}
+button,input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+.clear{clear: both;float: none;height: 0;overflow: hidden;}
+p{font-size: 100px;}
+#mask{
+ background: #000;
+ opacity: 0.75;
+ filter: alpha(opacity=75);
+ height: 1000px;
+ width: 100%;
+ position: absolute;
+ left: 0;
+ top: 0;
+ z-index: 1000;
+}
+#login{
+ position: fixed;
+ left: 30%;
+ top: 30%;
+ z-index:1001; 
+}
+.loginCon{
+ width: 670px;
+ height: 380px;
+ background: #fff;
+ border:5px solid #F01400;
+}
+#close{
+ width: 30px;
+ height: 30px;
+ background: blue;
+ cursor: pointer;
+ position: absolute;
+ right: 10px;
+ top: 10px;
+}
+#btnLogin{
+ width: 80px;
+ height: 40px;
+ background: #F01400;
+ margin:0 auto;
+ display: block;
+ cursor: pointer;
+ border-style: none;
+ color: #fff;
+ font-size: 16px;
+}
+</style> 
+</head> 
+<body>
+<button id="btnLogin">登录</button> 
+<!--
+<div id="mask"></div>
+<div id="login">
+ <div class="loginCon">
+ <div id="close"></div>
+ </div>
+</div>
+-->
+
+<script type="text/javascript">
+function openNew(){
+ //获取页面body！内容！的高度和宽度
+ var sHeight=document.documentElement.scrollHeight;
+ var sWidth=document.documentElement.scrollWidth;
+
+
+
+ 
+ //获取可视区域高度，宽度与页面内容的宽度一样
+ var wHeight=document.documentElement.clientHeight;
+ //创建遮罩层div并插入body
+ var oMask=document.createElement("div");
+ oMask.id="mask";
+ oMask.style.height=sHeight+"px";
+ //宽度直接用100%在样式里
+ document.body.appendChild(oMask);
+ //创建登录层div并插入body
+ var oLogin=document.createElement("div");
+ oLogin.id="login";
+ oLogin.innerHTML="<div class='annmodal'><div id='close'></div><a href= \"//127.0.0.1/scholat/php/download.php?fname=7.txt\">已交作业： 7.txt</a>"+
+ "<form>"+
+    "<input id =\"title\"type = \"text\" value=\"title\">"+
+    "<input id =\"text\" type=\"text\"value=\"text\">"+
+    "<input id =\"yes\" type=\"button\"value=\"send\">"+
+    "<input id =\"no\" type=\"button\"value=\"cancel\">"
+ "</form>"+
+ 
+ 
+ +"</div>"
+ document.body.appendChild(oLogin);
+
+
+
+ //获取login的宽度和高度并设置偏移值
+ var dHeight=oLogin.offsetHeight;
+ var dWidth=oLogin.offsetWidth;
+ oLogin.style.left=(sWidth-dWidth)/2+"px";
+ oLogin.style.top=(wHeight-dHeight)/2+"px";
+
+
+
+
+ //获取关闭按钮
+ var oClose=document.getElementById("close");
+ oMask.onclick=oClose.onclick=function(){
+  document.body.removeChild(oMask);
+  document.body.removeChild(oLogin);
+ }
+}
+window.onload=function(){
+ var oBtn=document.getElementById("btnLogin");
+ oBtn.onclick=function(){
+  openNew();
+ }
+}
+</script> 
+</body> 
+</html> 

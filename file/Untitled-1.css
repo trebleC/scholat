@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1{color:cadetblue;font-family: impact}
+P { color: grey; font-family: courier}
+button{ color: grey;font-family: impact}
+body{ text-align:center} 
+.div{ margin:0 auto; width:400px; height:100px; border:1px solid #F00}
