@@ -1,6 +1,7 @@
 # 在线学习网站
 
 此项目是基于 PHP + Apache + Mysql + Layui 搭建的教学辅助网站。
+### 预览→ [在线学习网站](http://120.79.0.194/scholat/tea_test/main.html.php?id=t1)
 
 ## 概述
 软件项目学习管理系统是一个方便教师与学生进行软件项目管理课程的学习与交流的软件。系统涵盖了基本操作，教师操作板块和学生操作板块。
@@ -30,17 +31,17 @@
 + 响应时间：150人同时访问时不超过3秒
 ## 主要功能截图
 + 公告页
-   ![公告页](./screenshots/teacher/公告/公告界面.png)
+   ![公告页](./screenshots/teacher/公告/公告界面.png)<br /><br /><br />
 + 课件页
-   ![课件页](./screenshots/teacher/课件/课件界面.png)
+   ![课件页](./screenshots/teacher/课件/课件界面.png)<br /><br /><br />
 + 作业页
-   ![作业页](./screenshots/teacher/作业/作业界面.png)
+   ![作业页](./screenshots/teacher/作业/作业界面.png)<br /><br /><br />
 + 班级页
-   ![班级页](./screenshots/teacher/班级/班级界面.png)
+   ![班级页](./screenshots/teacher/班级/班级界面.png)<br /><br /><br />
 + 讨论区
-   ![讨论区](./screenshots/common/讨论区界面.png)
+   ![讨论区](./screenshots/common/讨论区界面.png)<br /><br /><br />
 + 登陆页
-   ![讨论区](./screenshots/common/登陆界面.png)
+   ![讨论区](./screenshots/common/登陆界面.png)<br /><br /><br />
 ## 技术栈
 
 【前端】
@@ -94,7 +95,7 @@ https://github.com/trebleC/scholat.git
 #把下载好的文件放入安装路径的www目录中
 #启动服务器
 
-#加载文件中的 software_eng.sql 的数据库文件
+#加载文档中的 software_eng.sql 的数据库文件
 
 #打开
 https://localhost/scholat/index.html
@@ -122,5 +123,5 @@ The code is available under the [Apache License 2.0](LICENSE.txt).
 
 
 ## Thanks
-[@lannooo](https://github.com/lannooo) 感谢lannooo的项目，得到参考，里面的文档模板相当好用，项目传送门→[SETA_system](https://github.com/lannooo/SETA_system)
+[@lannooo](https://github.com/lannooo) <br />感谢lannooo的项目，得到参考，里面的文档模板相当好用，项目传送门→[SETA_system](https://github.com/lannooo/SETA_system)
 
