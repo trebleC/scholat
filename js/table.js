@@ -16,7 +16,7 @@ function attbtn() {
       ,even:"ture"
       //,width:1300
       //,height:1300
-      ,url: adir+"tea_consql_class.php?table=1" //数据接口
+      ,url: "tea_consql_class.php?table=1" //数据接口
       ,page: false//开启分页
       ,toolbar: '#toolbarDemo'
       ,size: 'lg'
@@ -64,7 +64,7 @@ function manbtn() {
       ,even:"ture"
       //,width:1300
       //,height:1300
-      ,url: adir+"tea_consql_class.php?table=1" //数据接口
+      ,url: "tea_consql_class.php?table=1" //数据接口
       ,page: false//开启分页
       ,toolbar: '#toolbarDemo'
       ,size: 'lg'
@@ -102,7 +102,7 @@ function manbtn() {
 //渲染考勤班级列表
 function showattlist() {
   //渲染班级列表
-  $.get(adir+"tea_consql_class.php?classes=1"
+  $.get("tea_consql_class.php?classes=1"
   ,function(response,status){
     var count = response.count;
     
@@ -152,7 +152,7 @@ function showattlist() {
               ,skin:'line'
               ,even:"ture"
               
-              ,url: adir+"tea_consql_class.php?table="+clid //数据接口
+              ,url: "tea_consql_class.php?table="+clid //数据接口
               ,page: false//开启分页
               ,toolbar: '#toolbarDemo'
               ,size: 'lg'
@@ -189,7 +189,7 @@ function showattlist() {
 //渲染考勤班级列表
 function showmanlist() {
   //渲染班级列表
-  $.get(adir+"tea_consql_class.php?classes=1"
+  $.get("tea_consql_class.php?classes=1"
   ,function(response,status){
     var count = response.count;
     
@@ -239,7 +239,7 @@ function showmanlist() {
               ,skin:'line'
               ,even:"ture"
               
-              ,url: adir+"tea_consql_class.php?table="+clid //数据接口
+              ,url: "tea_consql_class.php?table="+clid //数据接口
               ,page: false//开启分页
               ,toolbar: '#toolbarDemo'
               ,size: 'lg'
@@ -356,7 +356,7 @@ function addclass() {
       var title1=document.getElementById("title").value;
       var content1=document.getElementById("content").value;
       
-        $.get(adir+"tea_consql_edit.php", {
+        $.get("tea_consql_edit.php", {
         addid:anid1,
         title:title1,
         content:content1
@@ -406,7 +406,7 @@ function tabfun(table) {
 
     if(data.sid==value){
     //ajax修改表中的值
-    $.get(adir+"tea_consql_edit.php", {
+    $.get("tea_consql_edit.php", {
         type:"name",
         username:data.name,
         sid:data.sid,
@@ -420,7 +420,7 @@ function tabfun(table) {
 
   });
 }else{
-    $.get(adir+"tea_consql_edit.php", {
+    $.get("tea_consql_edit.php", {
         type:"sid",
         username:data.name,
         sid:data.sid,
@@ -482,7 +482,7 @@ table.on('tool(test)', function(obj){
 
   //移动学生到别的班级
   else if(obj.event === 'move'){
-    $.get(adir+"tea_consql_edit.php?showallclass=-1",function(response,status){
+    $.get("tea_consql_edit.php?showallclass=-1",function(response,status){
   
     str_cl="";
     clid_arr = new Array();
@@ -571,7 +571,7 @@ table.on('tool(test)', function(obj){
 
       var classId = $("#modalclassSelected option:selected").val();
      
-      $.get(adir+"tea_consql_edit.php", {
+      $.get("tea_consql_edit.php", {
      
         sid:obj.data.sid,
         moveid:classId
@@ -603,7 +603,7 @@ table.on('tool(test)', function(obj){
     var r=confirm("确认移除？")
     if (r==true)
       {
-        $.get(adir+"tea_consql_edit.php", {
+        $.get("tea_consql_edit.php", {
      
           
           deleid:obj.data.sid
@@ -640,7 +640,7 @@ function confirm1(){
   console.log(classId);
 }
 //ajax修改表中的值
-//     $.get(adir+"tea_consql_edit.php", {
+//     $.get("tea_consql_edit.php", {
      
 //         title:title1,
 //         content:content1,

@@ -4,7 +4,7 @@ showhw(-1);
 function showhw(clid) {
     
 
-$.get(adir+"consql_hw.php?clid="+clid,function(response,status){
+$.get("consql_hw.php?clid="+clid,function(response,status){
             str_cl="";
             var cltime ="";
             person_count = 50;
@@ -160,7 +160,7 @@ console.log("mid",mhid);
 
 if(btn_name=="edit"){
   tid="#hidden"+mhid;
-  $.get(adir+"consql_finename.php", {
+  $.get("consql_finename.php", {
             id:getQueryString("id")
           },function(response,status){
             
@@ -169,7 +169,7 @@ if(btn_name=="edit"){
            
 
             if($(tid).val()==response.data[0].tid){
-              $.get(adir+"consql_hw_text.php", {
+              $.get("consql_hw_text.php", {
                coid:mhid
              },function(response,status){
                console.log(response.data[0].end_t.split(" ")[0]);
@@ -255,7 +255,7 @@ if(btn_name=="edit"){
                     console.log(title1);
                     console.log(content1);
            
-                   $.get(adir+"tea_consql_edit.php", {
+                   $.get("tea_consql_edit.php", {
                    hid:anid1-1,
                    title:title1,
                    content:content1,
@@ -296,7 +296,7 @@ if(btn_name=="edit"){
 else if(btn_name=="delete"){
   
   tid="#hidden"+mhid;
-  $.get(adir+"consql_finename.php", {
+  $.get("consql_finename.php", {
             id:getQueryString("id")
           },function(response,status){
             
@@ -310,7 +310,7 @@ else if(btn_name=="delete"){
   
   if (r==true)
     {
-      $.get(adir+"tea_consql_del.php", {
+      $.get("tea_consql_del.php", {
           anid:mhid
           },function(response,status){
          console.log(response.code);
@@ -346,7 +346,7 @@ else if(btn_name=="delete"){
 
 else if(btn_name=="download"){
   
-  window.open(adir+"tea_hwinfo.html?hid="+mhid);
+  window.open("tea_hwinfo.html?hid="+mhid);
   
 }
 
@@ -364,7 +364,7 @@ else console.log(k.value=0);
 
 
 $("#downloadbutton").on("click",function() {
-  $.get(adir+"consql_hw.php?clid=-1",function(response,status){
+  $.get("consql_hw.php?clid=-1",function(response,status){
     clid=-1;
     str_cl="";
     clid_arr = new Array();
@@ -471,7 +471,7 @@ $("#downloadbutton").on("click",function() {
       var type1=document.getElementById("modalcheckbox").value;
       var classId1 = $("#modalclassSelected option:selected").val();
     
-      $.get(adir+"tea_consql_edit.php", {
+      $.get("tea_consql_edit.php", {
      
         title:title1,
         content:content1,

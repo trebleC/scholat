@@ -28,7 +28,7 @@ for (var i = 1; i < document.getElementById("commentdiv").childElementCount; i++
             //判断赞数量 把相应文字放到赞容器里
             praise.innerHTML = newtotal == 1 ? "我觉得很赞" : "我和" + total + "个人觉得很赞";
             el.innerHTML = "取消赞";
-            $.get(adir+"tea_consql_com.php", {
+            $.get("tea_consql_com.php", {
             likesadd:box.id.split("n")[1]
           });
         } else {
@@ -36,7 +36,7 @@ for (var i = 1; i < document.getElementById("commentdiv").childElementCount; i++
             newtotal = total - 1;
             praise.innerHTML = newtotal == 0 ? "" : newtotal + "个人觉得很赞";
             el.innerHTML = "赞";
-            $.get(adir+"tea_consql_com.php", {
+            $.get("tea_consql_com.php", {
             likesred:box.id.split("n")[1]
           });
         }
@@ -54,7 +54,7 @@ for (var i = 1; i < document.getElementById("commentdiv").childElementCount; i++
         //获得时间
         var time = getTime();
         //异步更新数据
-        $.get(adir+"tea_consql_com.php", {
+        $.get("tea_consql_com.php", {
             content: textarea.value,
             date: time,
             typeid:box.id.split("n")[1]

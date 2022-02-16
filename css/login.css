@@ -82,24 +82,24 @@ nav>.nav_link>ul>li:last-child{
     margin-top: 80px;
 }
 .container>.login_body>.login_form{
-    width: 300px;
-    /* background: #fff; */
+    width: 350px;
+    height: 450px;;
+    background: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.container>.login_body>.login_form>.login_top,
-.container>.login_body>.login_form>.login_con{
-    background-color: #fff;
-}
 
 .container>.login_body>.login_form>.login_top{
     /* padding-bottom: 30px; */
     padding: 20px 30px 10px 30px;
-    border-top-left-radius: 10px;
 
 }
 
 .container>.login_body>.login_form>.login_top>img{
     height: 40px;
+    position: relative;
+    top: 4px;
 }
 
 
@@ -173,7 +173,7 @@ nav>.nav_link>ul>li:last-child{
     padding: 0 28px;
     outline: none;
     height: 40px;
-    width: 184px;
+    width: 235px;
     border: none;
     border-bottom: 2px solid #703EFF;
     color: #333;
@@ -257,7 +257,7 @@ nav>.nav_link>ul>li:last-child{
 
 
 .container>.login_body>.login_ad{
-    width: 700px;
+    width: 650px;
     height: 450px;;
     overflow: hidden;
     background-image: url('../img/timg.jpg');
@@ -266,11 +266,9 @@ nav>.nav_link>ul>li:last-child{
     background-position: center center;
     position: relative;
     text-align: center;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
-    box-shadow: 0 0 16px 0px rgba(0, 0, 0, 0.35);
-
-    /* height: 100%; */
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+    /* box-shadow: 0 0 16px 0px rgba(0, 0, 0, 0.35); */
    
 }
 .container>.login_body>.login_ad>a{
@@ -340,4 +338,32 @@ nav>.nav_link>ul>li:last-child{
     height: 20px;
     vertical-align: middle;
     margin-right: 4px;
+}
+.other-desc{
+
+    box-sizing: border-box;
+    text-align: right;
+}
+.login_btn{
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;border-bottom: none;
+    cursor: pointer;
+    font-size: 16px;    
+    color: #fff;
+    text-align: center;
+    font-weight: bold
+    ;background-color: #683bf0;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
 }

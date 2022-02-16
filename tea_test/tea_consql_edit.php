@@ -42,7 +42,7 @@ else if(isset($_GET['addid'])){
   
   $cltime =$_GET["title"];
   $place =$_GET['content'];
- //查出老师id
+ //查出教师id
   $sql = "SELECT teacher.`tid` FROM teacher WHERE teacher.username = '".$_GET["addid"]."'";  
     $result = mysqli_query($conn,$sql);  
     

@@ -5,7 +5,7 @@ showmat(-1);
 function showmat(mtype) {
     
 
-$.get(adir+"consql_mat.php",function(response,status){
+$.get("consql_mat.php",function(response,status){
     
 var all_str = "";
 

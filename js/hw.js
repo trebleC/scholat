@@ -9,12 +9,12 @@ console.log(btn_name);
 if(btn_name=="look"){
     var h2=document.getElementById("beforeshow");
     h2.innerHTML="作业 <button id='backtohw'>返回</button>";
-   $.get(adir+"consql_hw_text.php", {
+   $.get("consql_hw_text.php", {
     coid:hid
   },function(response,status){
     var str="<div id=\"announcement_div\">"+
         "<h1>标题："+response.data[0].name+"</h1>"+
-        "<p>老师："+response.data[0].tname+"</p>"+
+        "<p>教师："+response.data[0].tname+"</p>"+
         "<p>截止时间"+response.data[0].end_t+"</p>"+
         "<p>url:"+response.data[0].url+"</p>"+
         "<br><br></div>";

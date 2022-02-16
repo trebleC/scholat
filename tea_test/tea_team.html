@@ -6,8 +6,8 @@
 <title>教学团队</title>
 
 <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></script>
+<script src="../public/js/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -52,7 +52,7 @@
      
     
     //showdiv
-    $.get("http://127.0.0.1/scholat/tea_test/consql_search.php", {
+    $.get("/scholat/tea_test/consql_search.php", {
            clid:1
          },function(response,status){
             
@@ -78,7 +78,7 @@
   $("#btn1").on("click",function(){
     
     var nameval=$("#name").val();
-     $.get("http://127.0.0.1/scholat/tea_test/consql_search.php", {
+     $.get("/scholat/tea_test/consql_search.php", {
             name:nameval
           },function(response,status){
             all_html="";
@@ -102,8 +102,8 @@
 
 
 });
-//操作要通过的老师
-$.get("http://127.0.0.1/scholat/tea_test/consql_search.php", {
+//操作要通过的教师
+$.get("/scholat/tea_test/consql_search.php", {
             pl:-1
           },function(response,status){
             all_html="";
@@ -124,12 +124,12 @@ $.get("http://127.0.0.1/scholat/tea_test/consql_search.php", {
 function yaoqing(ele) {
     alert("邀请成功");
 
-       $.get("http://127.0.0.1/scholat/tea_test/consql_search.php", {
+       $.get("/scholat/tea_test/consql_search.php", {
             tid:ele.value
           },function(response,status){
            
         
-            window.location.href="http://127.0.0.1/scholat/tea_test/tea_team.html?name="+ele.value; 
+            window.location.href="/scholat/tea_test/tea_team.html?name="+ele.value; 
             
           });
     
@@ -139,12 +139,12 @@ function yaoqing(ele) {
 function pass(ele) {
     alert("邀请成功");
 
-       $.get("http://127.0.0.1/scholat/tea_test/consql_search.php", {
+       $.get("/scholat/tea_test/consql_search.php", {
             plid:ele.value
           },function(response,status){
            
         
-            window.location.href="http://127.0.0.1/scholat/tea_test/tea_team.html"; 
+            window.location.href="/scholat/tea_test/tea_team.html"; 
             
           });
     

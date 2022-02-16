@@ -13,13 +13,13 @@
 <link rel="stylesheet" type="text/css" href="../css/layui.css">
 <!-- <script src="../js/jquery.js"></script>  -->
 <!-- <link rel="stylesheet" type="text/css" href="//layui.hcwl520.com.cn/layui/css/layui.css?v=201801090202" /> -->
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="lib/jquery-3.3.1.js"></script>
 
 
-<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../public/js/bootstrap.min.js"></script>
 
-<script src="https://cdn.90so.net/layui/2.4.5/layui.all.js"></script>
+
+<script src="../js/layui.all.min.js"></script>
 
 
 <script  src="../js/config.js"></script>
@@ -70,8 +70,8 @@
 </h5>
 </div>
 <div class="f-fr comment" style="border-top-width: 0px;">
-<div  id="welname" style="float: left;margin-right: 39px;margin-top: 10px;"><p>欢迎你,同学</p></div>
-<div class="comment_link" style="float: right;" id="j-comment-link" ><a href="../html/login.html">退出登录</a></div>
+<div  id="welname" style="float: left;margin-right: 39px;margin-top: 10px;"><p>欢迎您,同学</p></div>
+<div class="comment_link" style="float: right;" id="j-comment-link" ><a href="../index.html">退出登录</a></div>
 
 <div class="comment_rating" id="j-comment-rating"></div>
 </div>
@@ -184,7 +184,7 @@ $("#btnmain1").trigger("onclick");
 
 
 console.log(getQueryString("sid"));
-$.get(adir+"consql_finename.php", {
+$.get("consql_finename.php", {
             sid:getQueryString("sid")
           },function(response,status){
             

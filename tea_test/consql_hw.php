@@ -45,7 +45,7 @@ if(mysqli_num_rows($query)){
 
 
 //班级选择
-$sql_cli = "SELECT class.clid, class.cltime  FROM class INNER JOIN homework ON homework.clid = class.clid WHERE class.clid = class.clid AND class.coid = class.coid GROUP BY class.cltime ";  
+$sql_cli = "SELECT class.clid, class.cltime  FROM class INNER JOIN homework ON homework.clid = class.clid WHERE class.clid = class.clid AND class.coid = class.coid  ";  
 $result_cli = mysqli_query($conn,$sql_cli);  
 if (!$result_cli) {
     printf("Error: %s\n", mysqli_error($conn));

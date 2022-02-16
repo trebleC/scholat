@@ -22,7 +22,7 @@ function showdiv_fun(res){
         "<p  id= adate>nihao</p>"+
         "<p  id=content>nihao</p>"+
         "<br><br></div>";*/
-         $.get(adir+"consql_ann.php",function(response,status){
+         $.get("consql_ann.php",function(response,status){
             var all_str = "";
             for (var i = response.count-1;i>=0;i--)
         {               
@@ -53,11 +53,11 @@ function showdiv_fun(res){
 
         //element.innerHTML="<h1>评分标准</h1><br><br><button><a href = \"//127.0.0.1/scholat/file/cinfo.pdf\">下载文件</button>";
 
-        element.innerHTML="<object data=\"//127.0.0.1/scholat/file/cinfo.pdf\" type=\"application\/pdf\" width=\"100%\" height=\"100%\"> 任课老师还没有上传课程大纲呢！</object>";
+        element.innerHTML="<object data=\"//127.0.0.1/scholat/file/cinfo.pdf\" type=\"application\/pdf\" width=\"100%\" height=\"100%\"> 任课教师还没有上传课程大纲呢！</object>";
 
        //element.innerHTML="<iframe width=\"100%\" height=\"100%\"> This browser does not support PDFs. Please download the PDF to view it: <a href=\"//127.0.0.1/scholat/test/consql_cinfo.php\">Download PDF</a> </iframe>";
 /*
-        $.get(adir+"consql_cinfo.php",function(response,status,html){
+        $.get("consql_cinfo.php",function(response,status,html){
             var all_str = response;
             
 
@@ -86,7 +86,7 @@ function showdiv_fun(res){
         h2.innerHTML="作业";
 
 
-$.get(adir+"consql_hw.php",function(response,status){
+$.get("consql_hw.php",function(response,status){
     
             var all_str = "<div style=\"margin-top: 10px; margin-bottom: 18px;\"><table class=\"datalist\" id=\"datalist\" style=\"margin-bottom: 20px;\" cellspacing=\"1\"><tbody>"+
         "<tr style=\"background: rgb(212, 249, 249) none repeat scroll 0% 0%;height: 46px;\">       <th width=\"130px\"> 状态    </th>    <th  width=\"395px\"text-align=\"center\"> 作业标题    </th>        <th width=\"130px\"> 发布人    </th>    <th width=\"175px\"> 截止时间    </th>    <!-- <th width=\"130px\" > 提交时间    </th>-->        <th width=\"310px\"> 操作    </th>        <th width=\"100px\"> 评语    </th> </tr>";
@@ -303,7 +303,7 @@ $("#askbtn").on("click",function() {
         var sid1=document.getElementById("sid").value;
         var content1=document.getElementById("content").value;
         var date1=document.getElementById("date").value;
-        $.get(adir+"tea_consql_com.php", {
+        $.get("tea_consql_com.php", {
         sid:sid1,
         content:content1,
         date:date1  

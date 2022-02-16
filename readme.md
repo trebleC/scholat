@@ -1,7 +1,48 @@
-# 在线学习网站
+# 注意
+## 此仓库为摆烂项目(刚开始学的时候写的，写得实在太拉了，自己都看不下去😭 )
 
-此项目是基于 PHP + Apache + Mysql + Layui 搭建的教学辅助网站。
-### 预览→ [在线学习网站](http://120.79.0.194/scholat/tea_test/main.html.php?id=t1)
+## 主要用于应付<strong>课程设计</strong>、<strong>期末项目</strong>、忽悠老师。不值得用来借鉴学习！！！
+
+<br>
+<br>
+
+# 教学辅助网站
+
+
+此项目是基于 PHP + Mysql 纯原生的教学辅助网站。
+
+（ 害，哭了，如果用框架该多舒服呀😌 ）
+
+
+## Build Setup （大家尽量使用低版本的PHP，MySql）
+### windows
+```
+# 安装
+WampServer 或 phpStudy
+
+#克隆仓库
+git clone https://github.com/trebleC/scholat.git
+
+#把下载好的文件放入安装路径的www目录中
+
+#启动服务器
+
+#加载文档中的 software_eng.sql 的数据库文件
+
+#打开
+https://localhost/scholat/index.html
+
+```
+### 其他
+```
+MacOS 
+环境搭建不熟练的同学，建议不要使用Mac本地的Apache2服务，应该用brew搭建php+nginx环境更加方便
+
+CentOS: httpd+php完事
+```
+
+<br>
+<br>
 
 ## 概述
 软件项目学习管理系统是一个方便教师与学生进行软件项目管理课程的学习与交流的软件。系统涵盖了基本操作，教师操作板块和学生操作板块。
@@ -16,7 +57,7 @@
     + 关于课件，可以是文档，也可以是视频文件。
 须实现上传，删除，在线编辑功能。
 +	教学团队
-    + 课程创建的老师，可以邀请其他已注册的老师加入教学团队。其他老师也自己可以申请加入。
+    + 课程创建的教师，可以邀请其他已注册的教师加入教学团队。其他教师也自己可以申请加入。
 +	学生管理
     + 关于注册，账号和密码需要有长度和内容的限制。
 关于班级管理，指教师可以创建班级，学生申请加入课程时可以选择加入具体的班级。
@@ -26,9 +67,7 @@
     + 关于考勤管理，教师可以基于班级名单进行点名，1 表示到课；2表示旷课，3表示迟到，4表示请假。
     + 关于课堂加分，课堂上回答问题，或者课堂实践时表现优秀，可加分，具体内容包含：姓名，学号，日期，成绩
     + 关于课程实践评分，具体内容含：评分标准（最多250字），学号，姓名，成绩，点评。课程实践成绩可以录入，修改，保存，查询，全部导出。
-## 性能需求
-+ 用户数：80-150人
-+ 响应时间：150人同时访问时不超过3秒
+
 ## 主要功能截图
 + 公告页
    ![公告页](./screenshots/teacher/公告/公告界面.png)<br /><br /><br />
@@ -40,17 +79,14 @@
    ![班级页](./screenshots/teacher/班级/班级界面.png)<br /><br /><br />
 + 讨论区
    ![讨论区](./screenshots/common/讨论区界面.png)<br /><br /><br />
-+ 登陆页
-   ![讨论区](./screenshots/common/登陆界面.png)<br /><br /><br />
++ 登录页
+   ![登录页](./screenshots/common/登陆界面.png)<br /><br /><br />
 ## 技术栈
 
 【前端】
 
 + HTML/CSS/JS：亘古不变三件套
-+ ES6：ECMAScript 新一代语法，这也是以后的趋势
 + jQuery：主要用到 jQuery 的 ajax 方法处理异步请求和 DOM 操作
-+ Layui：样式好看，用起来方便，主要在动态表格中用到
-+ Bootstrap：页面 UI 框架，天然响应式，但是样式烂大街
   
 
 【后端】
@@ -65,58 +101,6 @@
 
 
 
-
-
-
-## TODO
-- [x] 用户登录注册表单校验
-- [ ] 修改Linux bulid步骤
-- [ ] 课程考勤管理失效
-- [ ] 用vue.js重写
-- [ ] 重写讨论区的数据库结构
-- [ ] 增加锚URL
-- [ ] 登陆session
-- [ ] 作业提交显示已交，修改操作变灰
-- [ ] 作业评语
-- [ ] 作业状态
-- [ ] ....
-
-
-## Build Setup
-### windows
-
-```
-#安装
-WampServer 或 phpStudy
-
-#下载 
-https://github.com/trebleC/scholat.git
-
-#把下载好的文件放入安装路径的www目录中
-#启动服务器
-
-#加载文档中的 software_eng.sql 的数据库文件
-
-#打开
-https://localhost/scholat/index.html
-
-```
-### Linux
-```
-# clone the repo into your disk.
-$ git clone https://github.com/trebleC/scholat.git
-
-# install dependencies
-$ npm install
-
-# run
-$ npm start
-
-# visit
-$ http://localhost/scholat/index.html
-```
-
-
 ## License
 
 The code is available under the [Apache License 2.0](LICENSE.txt).
@@ -125,3 +109,12 @@ The code is available under the [Apache License 2.0](LICENSE.txt).
 ## Thanks
 [@lannooo](https://github.com/lannooo) <br />感谢lannooo的项目，得到参考，里面的文档模板相当好用，项目传送门→[SETA_system](https://github.com/lannooo/SETA_system)
 
+## TODO
+- [x] 用户登录注册表单校验
+- [ ] 用vue.js重写
+- [ ] 重写讨论区的数据库结构
+- [ ] 登录session
+- [ ] 作业提交显示已交，修改操作变灰
+- [ ] 作业评语
+- [ ] 作业状态
+- [ ] ....

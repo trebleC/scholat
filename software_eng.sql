@@ -61,7 +61,7 @@ INSERT INTO `anouncement` VALUES ('3', '3', '3', '2016-12-30 00:00:00', '课程�
 INSERT INTO `anouncement` VALUES ('4', '3', '2', '2016-12-29 00:00:00', '课程时间变了', '注意注意', 'e', '0');
 INSERT INTO `anouncement` VALUES ('5', '2', '2', '2019-04-12 20:06:41', '测试2', '测试内容2', 'n', '0');
 INSERT INTO `anouncement` VALUES ('13', '2', '2', '2019-04-12 20:06:41', 'title1', '1111', 'n', '0');
-INSERT INTO `anouncement` VALUES ('32', '2', '1', '2016-12-16 00:00:00', '很高兴', '我成为了你的老师啊哈哈哈哈哈哈', 'n', '0');
+INSERT INTO `anouncement` VALUES ('32', '2', '1', '2016-12-16 00:00:00', '很高兴', '我成为了你的教师啊哈哈哈哈哈哈', 'n', '0');
 INSERT INTO `anouncement` VALUES ('42', '1', '1', '2019-05-28 10:55:00', '0.23.1235', '563', 'n', '0');
 INSERT INTO `anouncement` VALUES ('43', '1', '1', '2019-06-01 18:13:00', '今天天气', '很好啊.', 'n', '0');
 
@@ -243,8 +243,8 @@ INSERT INTO `cou_attend` VALUES ('1', '1', '10004', null, '刘四4');
 INSERT INTO `cou_attend` VALUES ('2', '1', '10001', null, '李五5');
 INSERT INTO `cou_attend` VALUES ('3', '1', '10002', null, '张六6');
 INSERT INTO `cou_attend` VALUES ('1', '1', '10002', null, '张二2');
-INSERT INTO `cou_attend` VALUES ('1', '1', '162011118', null, '黄杰锋');
-INSERT INTO `cou_attend` VALUES ('1', '1', '162011198', null, '李轩');
+INSERT INTO `cou_attend` VALUES ('1', '1', '11115', null, '古小8');
+INSERT INTO `cou_attend` VALUES ('1', '1', '23334', null, '李大9');
 INSERT INTO `cou_attend` VALUES ('1', '1', '1', null, '11');
 
 -- ----------------------------
@@ -271,7 +271,7 @@ CREATE TABLE `group_post` (
 -- Records of group_post
 -- ----------------------------
 INSERT INTO `group_post` VALUES ('1', '1', '10001', '软需第一次作业好难啊！', '2016-12-15 00:00:00', '\0', '0', '2333333333333333好难好难怎么学');
-INSERT INTO `group_post` VALUES ('2', '1', '10001', '明天要上课吗', '2016-12-02 00:00:00', '\0', '0', '求问老师明天上不上课xxxxxx');
+INSERT INTO `group_post` VALUES ('2', '1', '10001', '明天要上课吗', '2016-12-02 00:00:00', '\0', '0', '求问教师明天上不上课xxxxxx');
 INSERT INTO `group_post` VALUES ('3', '2', '10002', 'xxxxxxxxxxxxsssssss', '2016-12-22 00:00:00', '\0', '0', '12345');
 INSERT INTO `group_post` VALUES ('4', '1', '10001', '这是A', '2016-12-01 00:00:00', '\0', '0', 'AAAAAAAAAAAAAAAAAA');
 INSERT INTO `group_post` VALUES ('5', '2', '10002', '这是B', '2016-12-10 00:00:00', '\0', '0', 'BBBBBBBBBBBBBBb');
@@ -308,7 +308,7 @@ CREATE TABLE `group_post_floor` (
 -- Records of group_post_floor
 -- ----------------------------
 INSERT INTO `group_post_floor` VALUES ('1', '1', 'T', '1', null, null, '2016-12-29 00:00:00', '回去认真看看教材怎么说的', null, '0');
-INSERT INTO `group_post_floor` VALUES ('2', '1', 'S', null, null, '10001', '2016-12-30 00:00:00', '老师我还没买教材', '1', '0');
+INSERT INTO `group_post_floor` VALUES ('2', '1', 'S', null, null, '10001', '2016-12-30 00:00:00', '教师我还没买教材', '1', '0');
 
 -- ----------------------------
 -- Table structure for homework
@@ -533,7 +533,7 @@ CREATE TABLE `message` (
 -- ----------------------------
 -- Records of message
 -- ----------------------------
-INSERT INTO `message` VALUES ('1', null, '10001', '1', '0', '1', '2016-12-01 00:00:00', '老师我忘记密码了', '老师求重置密码', '');
+INSERT INTO `message` VALUES ('1', null, '10001', '1', '0', '1', '2016-12-01 00:00:00', '教师我忘记密码了', '教师求重置密码', '');
 INSERT INTO `message` VALUES ('2', '1', '1', '10001', '1', '0', '2016-12-07 00:00:00', '那你是怎么发我信息的？', '蛤蛤蛤？', '');
 INSERT INTO `message` VALUES ('3', '2', '10001', '1', '0', '1', '2016-12-07 00:00:00', '啊 对哦', '23333', '');
 
@@ -715,11 +715,11 @@ CREATE TABLE `teacher` (
 -- ----------------------------
 -- Records of teacher
 -- ----------------------------
-INSERT INTO `teacher` VALUES ('1', 't1', '123', '1', '\0', '\0', '0', 'A老师', 'F', null, null, '电气学院', '计算机科学与技术', '教师', '教授', '软件开发', '高质量', 'IEEE论文10000篇', '风趣幽默', '《成为系主任的一百种方法》', '“竺可祯和平奖”，“周树人杯作文大赛冠军”', '好好学习，天天向上！');
-INSERT INTO `teacher` VALUES ('2', 't2', 'rem_jbhhh', '1', '\0', '\0', '0', 'B老师', 'M', null, null, '电气学院', '软件工程', '教师', '教授', '软件管理', '讲不来', 'SRS写报告大赛冠军', '和蔼', '《我还想写100本书》', '“林俊杰歌唱大赛第二名”', '全都怪我，不该沉默时沉没');
-INSERT INTO `teacher` VALUES ('3', 't3', 'rem_jbhhh', '1', '\0', '\0', '0', 'C老师', 'M', null, null, '电气学院', '计算机网路', '教师', '应该教授', '计网', '666', 'web服务器编写大赛冠军', '厉害厉害', '《Http Caching》', '403，无法访问！', '这个东西你给我保存至少20天，不要来问我了');
-INSERT INTO `teacher` VALUES ('4', 't4', '123', '0', '\0', '\0', '-1', 'D老师', 'M', '', null, '电气学院', '嵌入式', '教师', null, '嵌入式', null, null, null, null, null, null);
-INSERT INTO `teacher` VALUES ('5', 't5', '123', '0', '\0', '\0', '0', 'E老师', 'M', null, null, '电气学院', '软件', null, null, '数据挖掘', null, null, null, null, null, null);
+INSERT INTO `teacher` VALUES ('1', 't1', '123', '1', '\0', '\0', '0', 'A教师', 'F', null, null, '电气学院', '计算机科学与技术', '教师', '教授', '软件开发', '高质量', 'IEEE论文10000篇', '风趣幽默', '《成为系主任的一百种方法》', '“竺可祯和平奖”，“周树人杯作文大赛冠军”', '好好学习，天天向上！');
+INSERT INTO `teacher` VALUES ('2', 't2', 'rem_jbhhh', '1', '\0', '\0', '0', 'B教师', 'M', null, null, '电气学院', '软件工程', '教师', '教授', '软件管理', '讲不来', 'SRS写报告大赛冠军', '和蔼', '《我还想写100本书》', '“林俊杰歌唱大赛第二名”', '全都怪我，不该沉默时沉没');
+INSERT INTO `teacher` VALUES ('3', 't3', 'rem_jbhhh', '1', '\0', '\0', '0', 'C教师', 'M', null, null, '电气学院', '计算机网路', '教师', '应该教授', '计网', '666', 'web服务器编写大赛冠军', '厉害厉害', '《Http Caching》', '403，无法访问！', '这个东西你给我保存至少20天，不要来问我了');
+INSERT INTO `teacher` VALUES ('4', 't4', '123', '0', '\0', '\0', '-1', 'D教师', 'M', '', null, '电气学院', '嵌入式', '教师', null, '嵌入式', null, null, null, null, null, null);
+INSERT INTO `teacher` VALUES ('5', 't5', '123', '0', '\0', '\0', '0', 'E教师', 'M', null, null, '电气学院', '软件', null, null, '数据挖掘', null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for teacher_info

@@ -17,7 +17,7 @@ function showdiv_fun(res){
             h2.innerHTML="公告<button id='annbutton'"+
             "style=\"margin-left: 39px;background-color: #40C85E;border: 41px;color: white;padding: 4px 9px;text-align: center;text-decoration: none;display: inline-block;cursor: pointer;border-radius: 5px;\""+
             ">添加公告</button>";
-         $.get(adir+"consql_ann.php",function(response,status){
+         $.get("consql_ann.php",function(response,status){
             var all_str = "";
            
 
@@ -50,7 +50,7 @@ function showdiv_fun(res){
             var r=confirm("确定删除吗？")
             if (r==true)
               {
-                $.get(adir+"tea_consql_del.php", {
+                $.get("tea_consql_del.php", {
                     anid:anid1
                     },function(response,status){
                    console.log(response.code);
@@ -145,7 +145,7 @@ function showdiv_fun(res){
                         console.log(anid1);
                          console.log(title1);
                          console.log(content1);
-                        $.get(adir+"tea_consql_edit.php", {
+                        $.get("tea_consql_edit.php", {
                         anid:anid1,
                         title:title1,
                         content:content1
@@ -250,7 +250,7 @@ function showdiv_fun(res){
              var title1=document.getElementById("title").value;
              var content1=document.getElementById("content").value;
              var date1=document.getElementById("date").value;
-             $.get(adir+"tea_consql_edit.php", {
+             $.get("tea_consql_edit.php", {
              title:title1,
              content:content1,
              date:date1  
@@ -297,7 +297,7 @@ function showdiv_fun(res){
 
     }else if(res=="2"){
         h2.innerHTML="评分标准";
-        element.innerHTML="<object data=\"//127.0.0.1/scholat/file/cinfo.pdf\" type=\"application\/pdf\" width=\"100%\" height=\"100%\"> 任课老师还没有上传课程大纲呢！</object>";
+        element.innerHTML="<object data=\"../file/cinfo.pdf\" type=\"application\/pdf\" width=\"100%\" height=\"100%\"> 任课教师还没有上传课程大纲呢！</object>";
  //element.innerHTML="<h1>评分标准</h1><br><br><button><a href = \"//127.0.0.1/scholat/file/cinfo.pdf\">下载文件</button>";
        //element.innerHTML="<iframe width=\"100%\" height=\"100%\"> This browser does not support PDFs. Please download the PDF to view it: <a href=\"//127.0.0.1/scholat/test/consql_cinfo.php\">Download PDF</a> </iframe>";
 /*
@@ -367,7 +367,7 @@ function showdiv_fun(res){
 
     }else if(res=="6"){
         h2.innerHTML="讨论区   <button id=\"askbtn\" style=\"margin-left: 39px;background-color: #40C85E;border: 41px;color: white;padding: 4px 9px;text-align: center;text-decoration: none;display: inline-block;cursor: pointer;border-radius: 5px;\">提问</button>";
-        $.get(adir+"tea_consql_com.php", {
+        $.get("tea_consql_com.php", {
             coid:8
           },function(response,status){
 
@@ -499,7 +499,7 @@ $("#askbtn").on("click",function() {
         var sid1=document.getElementById("sid").value;
         var content1=document.getElementById("content").value;
         var date1=document.getElementById("date").value;
-        $.get(adir+"tea_consql_com.php", {
+        $.get("tea_consql_com.php", {
         sid:sid1,
         content:content1,
         date:date1  
